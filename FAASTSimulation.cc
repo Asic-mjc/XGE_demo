@@ -59,12 +59,7 @@
 
 int main(int argc,char** argv)
 {
-/*	
-	for(int i = 0; i < KVP; i ++)
- 	{
- 		spectrum[i] = 0;
- 	}
-*/ 
+
   // Detect interactive mode (if no arguments) and define UI session
   //
   G4UIExecutive* ui = 0;
@@ -72,7 +67,7 @@ int main(int argc,char** argv)
     ui = new G4UIExecutive(argc, argv);
   }
 
-  //<-----------------------------随机数引擎和随机种子的产生----------------------------->
+  //<-----------------------------set Random engine and set the Seed----------------------------->
   
   // Choose the Random engine
   //Method 1 利用秒作为随机种子
