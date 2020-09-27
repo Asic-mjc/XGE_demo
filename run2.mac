@@ -1,0 +1,43 @@
+# Macro file for example B1
+# 
+# To be run preferably in batch, without graphics:
+# %  run2.mac
+#
+#/run/numberOfWorkers 4
+
+#
+/control/verbose 0
+/run/verbose 0
+#
+
+# 必须放在/run/initialize之前才有效
+/FAASTS/phys/addPhysics emlivermore
+/run/initialize
+
+
+#source
+/gps/particle e-
+/gps/pos/type Plane
+/gps/pos/shape Circle
+#/gps/pos/shape Rectangle
+#sets the centre co-ordinate(X,Y,Z) of the sourece
+/gps/pos/centre 0 5 0 um
+#sets the radius[default 0cm] of the source or outer radius for annuli
+/gps/pos/radius 0.5 um
+# 这里设置X方向的大小
+#/gps/pos/halfx 0.01 mm
+#由于旋转,这里的X在模型坐标中为Z方向
+#/gps/pos/halfy 0.06 mm
+
+#控制光源平面所在位置
+/gps/pos/rot1 1 0 0
+/gps/pos/rot2 0 0 1
+
+#/gps/ang/type iso
+
+/gps/ene/type Mono
+/gps/ene/mono 90.0 keV
+#/gps/ene/sigma 5. keV
+#set direction ,gauss sourece's default direction of propagation is -z axis, so it is necessary to set the dierection along the z axis;
+/gps/direction 0 -1 0
+/run/beamOn 5000000
