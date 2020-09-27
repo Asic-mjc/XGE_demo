@@ -55,7 +55,7 @@
 #include "FAASTSD.hh"
 #include "FAASTSPSD.hh"
 
-#include "G4VisAttributes.hh"//为了作色
+#include "G4VisAttributes.hh"//change the color of geomtry
 #include "G4Colour.hh"
 
 #include "G4PhysicalConstants.hh"//为了调用pi
@@ -111,9 +111,10 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
 	G4PhysicalVolumeStore::GetInstance()->Clean();
 	G4LogicalVolumeStore::GetInstance()->Clean();
 	G4SolidStore::GetInstance()->Clean();  //清理现有的几何体  如果有的话
-  //     
+
+  // ------------------------------
   // World
-  //
+  // ------------------------------
 	G4double world_sizeX = WORLD_X;
 	G4double world_sizeY = WORLD_Y;
 	G4double world_sizeZ = WORLD_Z;
@@ -138,9 +139,9 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
 
-  //     
+  // ------------------------------
   // Tube
-  //  
+  // ------------------------------
  	G4double Tube_sizeX = TUBE_X;
 	G4double Tube_sizeY = TUBE_Y;
 	G4double Tube_sizeZ = TUBE_Z;
@@ -191,10 +192,9 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
                                   0);              // copy number 
 
 
-  //
+  //------------------------------
   // Target
-  // 
-  //
+  //------------------------------
 
     G4double TargetWidthX 			= TargetWIDTHX;//Target_WIDTH_X;
     G4double TargetThicknessY		= TargetTHICKNESSY;
@@ -225,9 +225,9 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
 
 
 
-  //
+  // ------------------------------
   // Detectors
-  //	
+  // ------------------------------
 	G4double Detector_rmin =  DETECTOR_RMIN, Detector_rmax = DETECTOR_RMAX;
 	G4double Detector_hz = DETECTOR_HZ;    
 	G4double Detector_phimin = 0.*deg, Detector_phimax = 360.*deg;
@@ -289,19 +289,17 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
     logicDetectorVisAttributes -> SetVisibility(true);
 
 
-
-
-
-
   //
   //always return the physical World
   //
   return physWorld;
 }
+
+
 void FAASTDetectorConstruction::ConstructSDandField()
 {
     
-//灵敏探测器的注册
+//Sensitive detector registration
 
   //------------------------------------------------------------------
   //----------------------Set sensitive detectors---------------------
@@ -311,17 +309,17 @@ void FAASTDetectorConstruction::ConstructSDandField()
     G4String SDname;
     
     G4VSensitiveDetector* aFAASTSubstrate
-      = new FAASTSPSD(SDname="/FAASTSubstrate");//substrate灵敏探测器的名称
+      = new FAASTSPSD(SDname="/FAASTSubstrate");//substrate
     SDman->AddNewDetector(aFAASTSubstrate);  
 	logicBase->SetSensitiveDetector(aFAASTSubstrate);
     
 	G4VSensitiveDetector* aFAASTTarget
-      = new FAASTSPSD(SDname="/FAASTTarget");//target灵敏探测器的名称
+      = new FAASTSPSD(SDname="/FAASTTarget");//target
     SDman->AddNewDetector(aFAASTTarget); 
     logicTarget->SetSensitiveDetector(aFAASTTarget);
     
     G4VSensitiveDetector* aFAASTSD 
-      = new FAASTSD(SDname="/FAASTSD");//flux and spectrum detector灵敏探测器的名称
+      = new FAASTSD(SDname="/FAASTSD");//flux and spectrum detector
     SDman->AddNewDetector(aFAASTSD);
     logicDetector->SetSensitiveDetector(aFAASTSD);
 

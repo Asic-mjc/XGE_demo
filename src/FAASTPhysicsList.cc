@@ -29,6 +29,8 @@
 /// \brief Implementation of the FAASTPhysicsList class
 // 
 
+//ref:TestE2
+
 #include "FAASTPhysicsList.hh"
 #include "FAASTPhysicsListMessenger.hh"
 
@@ -176,7 +178,7 @@ void FAASTPhysicsList::AddDecay()
 
     }
   }
-  */ 
+*/
 }
 // *** Processes and models
 void FAASTPhysicsList::AddPhysicsList(const G4String& name)

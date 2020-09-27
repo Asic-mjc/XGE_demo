@@ -90,7 +90,7 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
  
     G4HCofThisEvent* hce = event->GetHCofThisEvent();
     
-    // 判断G4HCofThisEvent对象中是否存有hitCollection指针，如果为0（没有），退出
+    // 判断G4HCofThisEvent对象中是否存有hitCollection指针，if it is 0（没有），exit
     if (!hce) 
     {
         G4ExceptionDescription msg;
