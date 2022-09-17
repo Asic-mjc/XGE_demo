@@ -53,6 +53,11 @@ FAASTSteppingAction::~FAASTSteppingAction()
 //void FAASTSteppingAction::UserSteppingAction(const G4Step* aStep)
 void FAASTSteppingAction::UserSteppingAction(const G4Step*  )
 {
+      // ------------------------------
+      // We can get any infomation from every step, but it is super inefficient;
+      // Here I leave the codes for demostrating purpose
+      // The best way is to use Sensitive detector
+      // ------------------------------
 /*
 	if (aStep->GetTrack()->GetParticleDefinition()->GetParticleName() == "gamma")
 	{
@@ -68,10 +73,10 @@ void FAASTSteppingAction::UserSteppingAction(const G4Step*  )
 			G4String prename = preStep->GetPhysicalVolume()->GetName();
 			G4String postname = postStep->GetPhysicalVolume()->GetName();
 
-			if ((prename == "World") &&(postname == "Detector") )
+            if ((prename == "Tube") &&(postname == "Detector") )
 			{
 				G4double Energy11=aStep->GetTrack()->GetTotalEnergy();
-				if(Energy11/keV>5){//探测器能量阈值设置
+                if(Energy11/keV>5){//set a threshold for the energy detector
 	//				int sub = ceil((aStep->GetTrack()->GetKineticEnergy()) * 1000);
 					int sub = ceil(Energy11/keV/INTERVAL);
 						if (sub < 0)

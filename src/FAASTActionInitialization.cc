@@ -47,7 +47,7 @@ FAASTActionInitialization::~FAASTActionInitialization()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void FAASTActionInitialization::BuildForMaster() const // 多线程模式下调用
+void FAASTActionInitialization::BuildForMaster() const // 多线程模式下调用, I didn't use this in current code
 {
   //SetUserAction(new FAASTRunAction);
 }

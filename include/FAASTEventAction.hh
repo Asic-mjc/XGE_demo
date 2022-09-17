@@ -27,7 +27,7 @@
 //
 /// \file FAASTEventAction.hh
 /// \brief Definition of the FAASTEventAction class
-// 本文件来源于HandOn4 EventAction.hh 2018/03/28 15:22:42
+// ref: HandOn4 EventAction.hh 2018/03/28 15:22:42
 
 #ifndef FAASTEventAction_h
 #define FAASTEventAction_h 1

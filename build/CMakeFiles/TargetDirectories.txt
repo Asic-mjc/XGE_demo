@@ -1,0 +1,8 @@
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/install.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/list_install_components.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/rebuild_cache.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/edit_cache.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/FAAST01.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/FAASTSimulation.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/install/strip.dir
+/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build/CMakeFiles/install/local.dir

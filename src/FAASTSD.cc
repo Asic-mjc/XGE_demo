@@ -77,7 +77,7 @@ void FAASTSD::Initialize(G4HCofThisEvent* hce )
 	
 	
     //
-    // 3. 构建hitCollection，并讲它注册到G4HCofThisEvent* hce
+    // 3. 构建hitCollection，并将它注册到G4HCofThisEvent* hce
     // 
     //=================================	
     	
@@ -114,16 +114,17 @@ G4bool FAASTSD::ProcessHits(G4Step* step, G4TouchableHistory*)
     G4int trackID = pTrack->GetTrackID();
     G4String VertexName = pTrack -> GetLogicalVolumeAtVertex()->GetName();
   	
-	if (flg_trackID==trackID) return true;   
+    if (flg_trackID==trackID) return true;   // Find it is the same track, reject to record again
 	
 	//judgement
 	if (particleName=="gamma"){
-		flg_trackID = trackID;
+        // This makes sure the particle only record one time.
+        flg_trackID = trackID; // Once this particle has been record, set the flg_trackID = trackID.
 
 		// Total Energy
-		//G4double TotalEnergy = step->GetPreStepPoint()->GetTotalEnergy();
+        // G4double TotalEnergy = step->GetPreStepPoint()->GetTotalEnergy();
 		G4double TotalEnergy =pTrack->GetKineticEnergy();
-		count++;  
+        count++;  // Used for print out on the bash terminate
 	
 
 			 
@@ -146,7 +147,7 @@ void FAASTSD::EndOfEvent(G4HCofThisEvent* )
 {
   //This is invoked at the end of each event
 
-    if ((particle)%30 == 0)
+    if ((particle)%2000 == 0)
         {
             G4cout << "+++ Particle #: " << particle << G4endl;
             G4cout << "+++ Count #: "<< count << endl;

@@ -51,7 +51,7 @@ void FAASTSPSD::Initialize(G4HCofThisEvent* hce )
 	
 	
     //
-    // 3. 构建hitCollection，并讲它注册到G4HCofThisEvent* hce
+    // 3. 构建hitCollection，并将它注册到G4HCofThisEvent* hce
     // 
     //=================================	
     	

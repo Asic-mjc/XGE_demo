@@ -4,9 +4,9 @@
 
 //Geometry Parameters-------------------------------------------
 //World
-    const G4double WORLD_X = 0.22 *cm;
-    const G4double WORLD_Y = 0.22 *cm;
-    const G4double WORLD_Z = 0.22*cm;
+    const G4double WORLD_X = 0.25 *cm;
+    const G4double WORLD_Y = 0.25 *cm;
+    const G4double WORLD_Z = 0.25*cm;
 	
 //Tube----------------------------------------------------------
     const G4double TUBE_X = 0.219 *cm;
@@ -33,8 +33,8 @@
 
 	
 // Other Parameters -----------------------------------------
-    const G4double KVP=90;//simulation voltage
+    const G4double KVP=120;//simulation voltage
 
 // Root filename
-    const G4String RootFileName="90keV-5um";
+    const G4String RootFileName="120keV-5um";
 

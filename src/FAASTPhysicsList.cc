@@ -102,7 +102,8 @@ FAASTPhysicsList::FAASTPhysicsList():G4VModularPhysicsList(),emPhysicsList(0),fM
 
   // EM physics
   emName = G4String("empenelope");
-  emPhysicsList = new G4EmPenelopePhysics;//注意:虽然下面有很多物理过程选项,但是没有起作用,因为void FAASTPhysicsList::AddPhysicsList(const G4String& name)函数只在Messenger.cc中调用
+  emPhysicsList = new G4EmPenelopePhysics;//注意:虽然下面有很多物理过程选项,但是直接没有起作用,
+  // 因为void FAASTPhysicsList::AddPhysicsList(const G4String& name)函数只在Messenger.cc中调用才有用
   
 }
 
@@ -141,7 +142,7 @@ void FAASTPhysicsList::ConstructProcess()
 	AddDecay();
   
 
-//参考来源：David
+    //ref：David
     G4VModularPhysicsList::ConstructProcess();
     G4EmParameters* param = G4EmParameters::Instance();
     param->SetMinEnergy(0.1*keV);//--->Set the min kinetic energy for EM tables

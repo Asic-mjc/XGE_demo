@@ -68,6 +68,7 @@ void FAASTEventAction::BeginOfEventAction(const G4Event*)
     // 1. 获取hitCollection的ID号 fDHC1ID
     // 
     //=================================
+    // Note: 这里获得的ID号（fDHC1ID）将用于从G4HCofThisEvent容器中去获取hitCollection的指针（dHC1）
  
     if (fDHC1ID==-1) {
         G4SDManager* sdManager = G4SDManager::GetSDMpointer();
@@ -87,7 +88,11 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
     // 2. 获取G4HCofThisEvent指针
     // 
     //=================================	
- 
+    // Notes:
+    // 1) A G4Event object has a G4HCofThisEvent object at the end of the event processing (if it was successful)
+    // 2) G4HCofThisEvent stores all the hitCollection pointer(指针).
+    // 3) A event may have many hitCollection, see HandOn 4
+
     G4HCofThisEvent* hce = event->GetHCofThisEvent();
     
     // 判断G4HCofThisEvent对象中是否存有hitCollection指针，if it is 0（没有），exit
@@ -105,7 +110,8 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
     // 
     //=================================
  
-    // 第二步 通过上面获取的hitCollection的ID号（fDHC1ID）从G4HCofThisEvent容器中去获取hitCollection的指针（dHC1），下面就利用hitCollection的指针（dHC1）取出数据。
+    // 通过上面第1步获取的hitCollection的ID号（fDHC1ID）从G4HCofThisEvent容器中去获取hitCollection的指针（dHC1），
+    // 再后面就需要利用这里获取的hitCollection的指针（dHC1）取出数据。
     FAASTSPSDHitsCollection* dHC1 = static_cast<FAASTSPSDHitsCollection*>(hce->GetHC(fDHC1ID));//target
 	FAASTSPSDHitsCollection* dHC2 = static_cast<FAASTSPSDHitsCollection*>(hce->GetHC(fDHC2ID));//substrate
     FAASTSDHitsCollection* dHC3 = static_cast<FAASTSDHitsCollection*>(hce->GetHC(fDHC3ID));//Flux and energy spectrum detector
@@ -130,11 +136,11 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
     // Get analysis manager
     G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
  
-    // Fill histograms from the target datas
+    // Fill histograms from the target datas which were saved in dHC1
     G4int n_hit1 = dHC1->entries();
 
 	
-	for (G4int i=0;i<n_hit1;i++)
+    for (G4int i=0;i<n_hit1;i++)  // Loop all the hits in FAASTSPSDHitsCollection* dHC1
 	{
 		FAASTSPSDHit* hit1 = (*dHC1)[i];
 		G4double fEnergy = hit1->GetEnergy();
@@ -160,10 +166,10 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
 	
     flg_trackID=-1;//再次复位，防止上面的target的记录结果影响substrate的记录
 
-    // Fill histograms from substrate datas
+    // Fill histograms from substrate datas  which were saved in dHC2
     G4int n_hit2 = dHC2->entries();
 	
-	for (G4int i=0;i<n_hit2;i++)
+    for (G4int i=0;i<n_hit2;i++)  // Loop all the hits in FAASTSPSDHitsCollection* dHC1
 	{
 		FAASTSPSDHit* hit2 = (*dHC2)[i];
 		G4double fEnergy = hit2->GetEnergy();
@@ -185,9 +191,10 @@ void FAASTEventAction::EndOfEventAction(const G4Event* event)
 
     }    
 
-    // Fill histograms histograms of flux and energy spectrum detector
+    // Fill histograms histograms of flux and energy spectrum data  which were saved in dHC3
       G4int n_hit3 = dHC3->entries();
-      for (G4int i=0;i<n_hit3;i++){
+      for (G4int i=0;i<n_hit3;i++)  //Loop all the hits in FAASTSDHitsCollection* dHC3
+      {
           FAASTSDHit* hit3 = (*dHC3)[i];
           G4double fEnergy = hit3->GetEnergy();
 

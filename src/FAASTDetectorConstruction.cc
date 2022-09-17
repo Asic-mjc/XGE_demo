@@ -267,10 +267,12 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
                       9999,                       //copy number
                       checkOverlaps);          //overlaps checking
 
-			  
+  // ------------------------------
+  // Set the visibility of the geometry
+  // ------------------------------
 	G4VisAttributes* BoxVisAttributes= new G4VisAttributes(G4Colour(1.0,1.0,1.0));
     logicWorld  ->SetVisAttributes(BoxVisAttributes);
-    BoxVisAttributes-> SetVisibility(false);
+    BoxVisAttributes-> SetVisibility(true);
 	
     G4VisAttributes* logicTubeVisAttributes= new G4VisAttributes(G4Colour(0.5,0.5,1));
     logicTube  ->SetVisAttributes(logicTubeVisAttributes);
@@ -289,9 +291,9 @@ G4VPhysicalVolume* FAASTDetectorConstruction::Construct()
     logicDetectorVisAttributes -> SetVisibility(true);
 
 
-  //
+  // ------------------------------
   //always return the physical World
-  //
+  // ------------------------------
   return physWorld;
 }
 
