@@ -24,13 +24,16 @@
 ## Physical Process
 - For our application case of X-ray imaging or X-ray tube, Penelope and Livemore may be the best options. I got this idea from a paper. [Guthoff, M., O. Brovchenko, W. De Boer, A. Dierlamm, T. Müller, A. Ritter, M. Schmanau, and H-J. Simonis. "Geant4 simulation of a filtered X-ray source for radiation damage studies." Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment 675 (2012): 118-122.](https://www.sciencedirect.com/science/article/pii/S0168900212000691)
 - According to this idea, I set a PhysicsList to refer to an example in G4. /examples/extended/electomagnetic/TestEm2/src/PhysicsList.cc. And I set the Penelope as the default physics process.
-- I use a PhysicsListMessenger.cc to set it a mac commend, ref /examples/extended/electomagnetic/TestEm2/src/PhysicsListMessenger.cc. So, we can set/change the physical process in run2.mac, for example: `/FAASTS/phys/addPhysics emlivermore` 
+- I use a PhysicsListMessenger.cc to set it as a mac commend, ref /examples/extended/electomagnetic/TestEm2/src/PhysicsListMessenger.cc. So, we can set/change the physical process in run2.mac, for example: `/FAASTS/phys/addPhysics emlivermore` 
 
 ## Run
 - Start the **bash mode**: open a terminal, `./startrun2.sh`. It will run 20000000 electrons which can be changed in run2.mac in the current terminal and generate a ROOT file under the build folder.
-- Start the **visulization mode**: open a terminal, `./startrun1.sh`. It will open a QT to show the model, it runs 30 electrons which can be changed at vis.mac.
+- Start the **visulization mode**: open a terminal, `./startrun1.sh`. It will open a QT to show the 3D model, it runs 30 electrons which can be changed at vis.mac.
 
 ## Grab or visualize the ROOT data
 - Open a bash terminal at the current directory of ROOT file, then input `root` to open a root environment, then type `TBrowser b` to open a ROOT GUI. Use `.q` to quit the ROOT environment in the current terminal.
 - Open a bash terminal at the current directory of ROOT file, then type `root -l plotfluxspectrum.C`. Note: We need to prepare the *.C file by ourselves, I put a demo in the folder of  **ROOT-demo**.
 
+## References
+- [Geant4 Tutorial 2015 @ MIT](https://www.slac.stanford.edu/xorg/geant4/MIT2015/MIT2015_Agenda.html) 
+- A good start for beginner is the excecises in the [Hands On Sessions](https://indico.slac.stanford.edu/event/148/contributions/222/attachments/227/342/HandsOnIntro.pdf)
