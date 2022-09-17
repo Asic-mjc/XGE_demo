@@ -1,5 +1,5 @@
-# XGE_demo: X-ray generation Geant4 demo codes.
-## Transmission source mode.
+# XGE_demo: X-ray generation using Geant4
+## Transmission source mode
 - Simulate the X-ray spectrum generated in the W target and Diamond substrate.
 - Simulate a spectrum (flux) detector to collect the X-ray spectrum emit from the entire source.
 
