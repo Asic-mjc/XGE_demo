@@ -27,7 +27,7 @@
 - Start the **bash mode**: open a terminal, `./startrun2.sh`. It will run 20000000 electrons which can be changed in run2.mac in the current terminal and generate a ROOT file under the build folder.
 - Start the **visulization mode**: open a terminal, `./startrun1.sh`. It will open a QT to show the model, it runs 30 electrons which can be changed at vis.mac.
 
-## Grab or visulize the ROOT data
+## Grab or visualize the ROOT data
 - Open a bash terminal at the current directory of ROOT file, then input `root` to open a root environment, then type `TBrowser b` to open a ROOT GUI. Use `.q` to quit the ROOT environment in the current terminal.
 - Open a bash terminal at the current directory of ROOT file, then type `root -l plotfluxspectrum.C`. Note: We need to prepare the *.C file by ourselves, I put a demo in the folder of  **ROOT-demo**.
 
