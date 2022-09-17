@@ -1,4 +1,7 @@
 # XGE_demo: X-ray generation using Geant4
+## OS and Geant4 version
+- OS: Ubuntu 16.04.6 LTS              
+- Geant4 version: geant4.10.04.p01.tar.gz
 ## Transmission source mode
 - Simulate the X-ray spectrum generated in the W target and Diamond substrate.
 - Simulate a spectrum (flux) detector to collect the X-ray spectrum emit from the entire source.
