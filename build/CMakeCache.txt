@@ -171,8 +171,8 @@ FAAST01_BINARY_DIR:STATIC=/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo/build
 //Value Computed by CMake
 FAAST01_SOURCE_DIR:STATIC=/home/zangb/G4Codes-Sigray/Z01-OY/XGE_demo
 
-//No help, variable specified on the command line.
-Geant4_DIR:UNINITIALIZED=/home/zangb/Geant4/Geant4Install/lib/Geant4-10.4.1
+//The directory containing a CMake configuration file for Geant4.
+Geant4_DIR:PATH=/home/zangb/Geant4/Geant4Install/lib/Geant4-10.4.1
 
 //Build example with Geant4 UI and Vis drivers
 WITH_GEANT4_UIVIS:BOOL=ON

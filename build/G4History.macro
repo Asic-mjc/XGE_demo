@@ -47,3 +47,5 @@
 /gps/direction 0 -1 0
 /run/beamOn 30
 /vis/scene/notifyHandlers scene-0
+/run/beamOn 100
+/run/beamOn 100
