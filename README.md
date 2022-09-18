@@ -13,7 +13,7 @@
 
 ## Input
 - Geometry parameters are set here: FAASTZGBParameters.cc
-- The Electron beam is set here: run2.mac (bash mode); vis.mac(visulization mode).
+- The Electron beam is set here: run2.mac (bash mode); vis.mac (visulization mode).
 
 ## Output
 - The W target, Diamond substate, and the energy spectrum detector (which also can be thought as a flux detector by summing the spectrum) are set as sensitive detectors, respectively.
@@ -28,7 +28,7 @@
 
 ## Run
 - Start the **bash mode**: open a terminal, `./startrun2.sh`. It will run 20000000 electrons which can be changed in run2.mac in the current terminal and generate a ROOT file under the build folder.
-- Start the **visulization mode**: open a terminal, `./startrun1.sh`. It will open a QT to show the 3D model, it runs 30 electrons which can be changed at vis.mac.
+- Start the **QT (visulization) mode**: open a terminal, `./startrun0.sh`. It will open a QT to show the 3D model, it runs 30 electrons which can be changed at vis.mac.
 
 ## Grab or visualize the ROOT data
 - Open a bash terminal at the current directory of ROOT file, then input `root` to open a root environment, then type `TBrowser b` to open a ROOT GUI. Use `.q` to quit the ROOT environment in the current terminal.
