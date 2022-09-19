@@ -24,7 +24,8 @@
 
 
 - The energy spectrum detector records the X-ray spectrum which is filtered by the W and diamond substrate.
-![X-ray generation spectrum](https://user-images.githubusercontent.com/32512895/191103672-93b1cf28-88bf-4798-8759-9c06691807ee.png)
+![X-ray spectrum  recorded by the spectrum detector](https://user-images.githubusercontent.com/32512895/191104805-ab52a702-3fea-4919-843a-f55d607f839e.png)
+
 
 
 
