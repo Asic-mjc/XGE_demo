@@ -20,7 +20,15 @@
 ## Output
 - The W target, Diamond substate, and the energy spectrum detector (which also can be thought as a flux detector by summing the spectrum) are set as sensitive detectors, respectively.
 - The W target, Diamond substate sensitive detector record the X-ray spectrum genetrated in the W target and in the diamond, respectively. 
+![X-ray generation spectrum](https://user-images.githubusercontent.com/32512895/191102672-37d3ca08-9fa4-44fb-aca8-a3984efe1eb9.png)
+
+
 - The energy spectrum detector records the X-ray spectrum which is filtered by the W and diamond substrate.
+![X-ray generation spectrum](https://user-images.githubusercontent.com/32512895/191103672-93b1cf28-88bf-4798-8759-9c06691807ee.png)
+
+
+
+
 - All the data are retrieved at the **SD.cc file, and filed into ROOT histogram in EvenAction.cc file. The ROOT histgram are set in the RunAction.cc file.
 
 ## Physical Process
