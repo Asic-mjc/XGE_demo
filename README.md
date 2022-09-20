@@ -48,3 +48,4 @@
 ## References
 - [Geant4 Tutorial 2015 @ MIT](https://www.slac.stanford.edu/xorg/geant4/MIT2015/MIT2015_Agenda.html) 
 - A good start for beginner is the excecises in the [Hands On Sessions](https://indico.slac.stanford.edu/event/148/contributions/222/attachments/227/342/HandsOnIntro.pdf)
+- More training materials can be found in [Geant4 at SLAC Past events](https://geant4.slac.stanford.edu/past-events). It is continuous updates. Geant4 tutorials conducted by SLAC Geant4 team
