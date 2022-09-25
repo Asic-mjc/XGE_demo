@@ -35,8 +35,8 @@
 ## Physical Process
 - For our application case of X-ray imaging or X-ray tube, Penelope and Livemore may be the best options. I got this idea from a paper. [Guthoff, M., O. Brovchenko, W. De Boer, A. Dierlamm, T. Müller, A. Ritter, M. Schmanau, and H-J. Simonis. "Geant4 simulation of a filtered X-ray source for radiation damage studies." Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment 675 (2012): 118-122.](https://www.sciencedirect.com/science/article/pii/S0168900212000691)
 - According to this idea, I set a PhysicsList to refer to an example in G4. /examples/extended/electomagnetic/TestEm2/src/PhysicsList.cc. And I set the Penelope as the default physics process.
-- The process of the electrons penetrating a target produce X-rays.Ref: [Poludniowski, Gavin, Artur Omar, and Pedro Andreo. "Calculating X-ray Tube Spectra: Analytical and Monte Carlo Approaches." (2022).](https://books.google.com/books/about/Calculating_X_ray_Tube_Spectra.html?id=wWVhEAAAQBAJ&source=kp_book_description)
-![Electrons penetrating a target produce xrays process](https://user-images.githubusercontent.com/32512895/191566835-374bbc63-c0a7-49ee-be18-63304df7ef26.png)
+- The process of the electrons penetrating a target produce X-rays.Ref: [Poludniowski, Gavin, Artur Omar, and Pedro Andreo. "Calculating X-ray Tube Spectra: Analytical and Monte Carlo Approaches." (2022).](https://books.google.com/books/about/Calculating_X_ray_Tube_Spectra.html?id=wWVhEAAAQBAJ&source=kp_book_description) In section of 7.3.3, it mentions **G4EmLivermorePhysics**, **G4EmPenelopePhysics**, **G4EmStandardPhysics option4**.
+![Electrons penetrating a target produce xrays process](https://user-images.githubusercontent.com/32512895/191566835-374bbc63-c0a7-49ee-be18-63304df7ef26.png). 
 
 
 - Regarding to the fluorescence generation, please ref: [How to simulate Atomic Deexcitation?](https://twiki.cern.ch/twiki/bin/view/Geant4/LoweAtomicDeexcitation)
