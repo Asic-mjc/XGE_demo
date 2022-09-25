@@ -55,3 +55,4 @@
 - A good start for beginner is the excecises in the [Hands On Sessions](https://indico.slac.stanford.edu/event/148/contributions/222/attachments/227/342/HandsOnIntro.pdf)
 - More training materials can be found in [Geant4 at SLAC Past events](https://geant4.slac.stanford.edu/past-events). It is continuous updates. Geant4 tutorials conducted by SLAC Geant4 team
 - Geant4 Homepage [Book For Application Developers](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/index.html#)
+- [Analysis Manager Classes](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Analysis/analysis.html) The analysis manager classes provide uniform interfaces to the g4tools package and hide the differences between use of g4tools classes for the supported output formats (ROOT, HDF5, AIDA XML and CSV).
